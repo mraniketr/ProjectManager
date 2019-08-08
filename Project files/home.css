@@ -14,6 +14,33 @@ a{
 	text-decoration: none;
 }
 
+.btn{
+	display: inline-block;
+	color: white;
+	background: #00A0B6;
+	padding: 0.5rem 2rem;
+	border:none;
+	border-radius: 5px;	
+}
+
+.btn:hover{	
+	background: #00A0B6;
+}
+
+.btn-dark{
+	background: #333;
+	color: white;
+}
+
+.py-1{padding: 1.5rem 0;}
+.py-2{padding: 2rem 0;}
+.py-3{padding: 3rem 0;}
+
+.p-1{padding: 1.5rem ;}
+.p-2{padding: 2rem ;}
+.p-3{padding: 3rem ;}
+
+
 .text-center{
 	text-align: center;
 }
@@ -128,3 +155,8 @@ a{
 	
 }
 
+#main-footer{
+	background: #0f0f0f;
+	color: white;
+	text-align: center;
+}
