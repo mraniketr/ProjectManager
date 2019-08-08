@@ -83,6 +83,7 @@ a{
 /*Navbar end */
 
 #about{
+	padding:1rem;
 	display: flex;
 	flex-direction: row;
 
@@ -104,6 +105,10 @@ a{
 
 
 /*FEATURES*/
+
+#what{
+	padding:1rem;
+}
 
 #what .items{
 	display: flex;
