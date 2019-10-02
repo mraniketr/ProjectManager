@@ -21,6 +21,10 @@
 		<input type="text" name="id_admin" value="">
 	</div>
 	<div class="input-group">
+		<label>Discription</label>
+		<input type="text" name="disc" value="">
+	</div>
+	<div class="input-group">
 		<label>User 1</label>
 		<input type="text" name="id_user1" value="">
 	</div>

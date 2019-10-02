@@ -181,6 +181,7 @@ global $db, $errors;
 	$user_id1  =  e($_POST['id_user1']);
 	$user_id2  =  e($_POST['id_user2']);
 	$user_id3  =  e($_POST['id_user3']);
+	$disc  =  e($_POST['disc']);
 
 if (empty($pname)) { 
 		array_push($errors, "Project name is required"); 
@@ -190,8 +191,8 @@ if (empty($pname)) {
 	// register user if there are no errors in the form
 	if (count($errors) == 0) {
 
-		$query = "INSERT INTO members_project (admin_id,pname, user_id1, user_id2, user_id3) 
-					  VALUES('$admin_id','$pname', '$user_id1', '$user_id2', '$user_id3')";
+		$query = "INSERT INTO members_project (admin_id,pname,disc, user_id1, user_id2, user_id3) 
+					  VALUES('$admin_id','$pname','$disc', '$user_id1', '$user_id2', '$user_id3')";
 			mysqli_query($db, $query);
 
 			header('location: index.php');				
