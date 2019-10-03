@@ -59,8 +59,12 @@ function register(){
 
 			// get id of the created user
 			$logged_in_user_id = mysqli_insert_id($db);
-
-			$_SESSION['user'] = getUserById($logged_in_user_id); // put logged in user in session
+			
+			$_SESSION['user'] = getUserById($logged_in_user_id); 
+						
+			
+						
+			// put logged in user in session
 			$_SESSION['success']  = "You are now logged in";
 			header('location: index.php');				
 		}
@@ -70,12 +74,24 @@ function register(){
 // return user array from their id
 function getUserById($id){
 	global $db;
-	$query = "SELECT * FROM users WHERE id=" . $id;
+	$query = "SELECT * FROM users WHERE id= $id";
 	$result = mysqli_query($db, $query);
 
 	$user = mysqli_fetch_assoc($result);
 	return $user;
 }
+
+
+// return projects by id
+function getProjectById($id){
+	global $db;
+	$query = "SELECT pname FROM members_project WHERE admin_id= $id ";
+	$result = mysqli_query($db, $query);
+
+	$padmin = mysqli_fetch_assoc($result);
+	return $padmin;
+}
+
 
 // escape string
 function e($val){
@@ -177,7 +193,7 @@ global $db, $errors;
 	// receive all input values from the form. Call the e() function
     // defined below to escape form values
 	$pname    =  e($_POST['pname']);
-	$admin_id  =  e($_POST['id_admin']);
+	$admin_id  =  e($_SESSION['user']['id']);
 	$user_id1  =  e($_POST['id_user1']);
 	$user_id2  =  e($_POST['id_user2']);
 	$user_id3  =  e($_POST['id_user3']);
@@ -200,3 +216,6 @@ if (empty($pname)) {
 	}
 	
 }
+
+
+						

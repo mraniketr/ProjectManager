@@ -18,10 +18,10 @@
 	</div>
 	<div class="input-group">
 		<label>admin id</label>
-		<input type="text" name="id_admin" value="">
+		<?php echo ucfirst($_SESSION['user']['id']); ?>
 	</div>
 	<div class="input-group">
-		<label>Discription</label>
+		<label>Description</label>
 		<input type="text" name="disc" value="">
 	</div>
 	<div class="input-group">

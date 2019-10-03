@@ -35,6 +35,48 @@ include('functions.php');
 					<small>
 						<i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)</i> 
 						<br>
+						<h3>User Id - <?php echo ucfirst($_SESSION['user']['id']); ?></h3>
+						<?php $id=$_SESSION['user']['id'] ?>
+						<br>
+						<h2> Admin Projects</h2>
+						<?php 
+							error_reporting(0);
+
+								$sql="SELECT pname FROM members_project WHERE admin_id= $id ";
+								if ($result=mysqli_query($db, $sql))
+								  {
+								  // Fetch one and one row
+								  while ($row=mysqli_fetch_row($result))
+								    {
+								    // printf ("%s\n",$row[0],$row[1]);
+								    echo "<a href='../login/project_dashboard.php'>$row[0]$row[1]</a>";
+								    echo "<br>";
+								    
+								    }
+								  // Free result set
+								  mysqli_free_result($result);
+								}						
+						?>
+						<br>
+						<h2> Other Projects</h2>
+							<?php 
+							error_reporting(0);
+
+								$sql="SELECT pname FROM members_project WHERE user_id1= $id or user_id2= $id or user_id3= $id";
+								if ($result=mysqli_query($db, $sql))
+								  {
+								  // Fetch one and one row
+								  while ($row=mysqli_fetch_row($result))
+								    {
+								    printf ("%s\n",$row[0],$row[1]);
+								    echo "<br>";
+								    }
+								  // Free result set
+								  mysqli_free_result($result);
+								}						
+						?>
+						
+						<br>
 						<a href="project.php" style="color: green;">Create a project</a>
 						<br>
 
