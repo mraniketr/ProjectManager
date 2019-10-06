@@ -7,7 +7,7 @@ $db = mysqli_connect('localhost', 'root', '', 'multi_login');
 $username = "";
 $email    = "";
 $errors   = array(); 
-
+$pid ="";
 // call the register() function if register_btn is clicked
 if (isset($_POST['register_btn'])) {
 	register();

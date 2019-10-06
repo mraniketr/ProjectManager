@@ -42,14 +42,14 @@ include('functions.php');
 						<?php 
 							error_reporting(0);
 
-								$sql="SELECT pname FROM members_project WHERE admin_id= $id ";
+								$sql="SELECT pname,pid FROM members_project WHERE admin_id= $id ";
 								if ($result=mysqli_query($db, $sql))
 								  {
 								  // Fetch one and one row
 								  while ($row=mysqli_fetch_row($result))
 								    {
 								    // printf ("%s\n",$row[0],$row[1]);
-								    echo "<a href='../login/project_dashboard.php'>$row[0]$row[1]</a>";
+								    echo "<a href='../login/project_dashboard.php?data=$row[1]'>$row[0]</a>";
 								    echo "<br>";
 								    
 								    }
@@ -62,13 +62,14 @@ include('functions.php');
 							<?php 
 							error_reporting(0);
 
-								$sql="SELECT pname FROM members_project WHERE user_id1= $id or user_id2= $id or user_id3= $id";
+								$sql="SELECT pname,pid FROM members_project WHERE user_id1= $id or user_id2= $id or user_id3= $id";
 								if ($result=mysqli_query($db, $sql))
 								  {
 								  // Fetch one and one row
 								  while ($row=mysqli_fetch_row($result))
 								    {
-								    printf ("%s\n",$row[0],$row[1]);
+								    // printf ("%s\n",$row[0],$row[1]);
+								    echo "<a href='../login/project_dashboard.php?data=$row[1]'>$row[0]</a>";
 								    echo "<br>";
 								    }
 								  // Free result set
