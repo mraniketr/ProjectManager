@@ -14,6 +14,20 @@ include('functions.php');
 <head>
 	<title>Home</title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
+	<style type="text/css">
+		table {
+border-collapse: collapse;
+width: 100%;
+color: #588c7e;
+text-align: center;
+}
+th {
+background-color: #588c7e;
+color: white;
+}
+tr:nth-child(even) {background-color: #f2f2f2}
+
+	</style>
 </head>
 <body>
 	<div class="header">
@@ -100,17 +114,25 @@ $con = mysqli_connect('localhost',$user,$pass,'folder') or die($error);
 $res = mysqli_query($con,$sql);
 ?> 
 
+<table>
+<tr>
+<th>FID</th>
+<th>NAME</th>
+<th>TIMESTAMP</th>
+<th>DOWNLAOD</th>
+</tr>
 <?php
-echo  "fid timestamp file name ";
     while($row = mysqli_fetch_array($res,MYSQLI_ASSOC)) {
-        $fid = $row['fid'];
-        $name = $row['name'];
-        $path = $row['path'];
-        $timestamp = $row['timestamp'];
-        echo $fid." ".$timestamp." ".$name."<a href='../folder/download.php?dow=$path'>Download</a>";
-        echo "<br>";
+        // $fid = $row['fid'];
+        // $name = $row['name'];
+        // $path = $row['path'];
+        // $timestamp = $row['timestamp'];
+        // echo $fid." ".$timestamp." ".$name."<a href='../folder/download.php?dow=$path'>Download</a>";
+     	echo "<tr><td>".$row['fid']."</td><td>".$row['name']."</td><td>". $row['timestamp']."</td><td>"."<a href='../folder/download.php?dow=$path'>Download</a>"."</td></tr>";
     }
+ echo "</table>";
     ?>
+    </table>
 
 				<br>
 						<a href="index.php?logout='1'" style="color: red;">logout</a>
