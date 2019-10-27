@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 07, 2019 at 03:45 PM
+-- Generation Time: Oct 27, 2019 at 11:54 AM
 -- Server version: 10.4.6-MariaDB
--- PHP Version: 7.1.32
+-- PHP Version: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,21 @@ SET time_zone = "+00:00";
 --
 -- Database: `multi_login`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comment`
+--
+
+CREATE TABLE `comment` (
+  `comment_id` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `comment` varchar(255) NOT NULL,
+  `reply_comment_id` int(11) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `pid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -43,12 +58,11 @@ CREATE TABLE `members_project` (
 --
 
 INSERT INTO `members_project` (`pid`, `pname`, `disc`, `admin_id`, `user_id1`, `user_id2`, `user_id3`) VALUES
-(13, 'cryptor', 'Crypto', 1, 2, 3, 4),
-(14, 'asdasdasdasdas', 'sadasdas', 1, 2, 3, 4),
-(15, 'dom', 'this is some crypto shit', 1, 2, 4, 3),
-(16, 'asdasdasdasd', 'gandu', 2, 2, 4, 1),
-(17, 'Project 2', 'this is a short discription of the project', 1, 2, 4, 3),
-(18, 'my new project', 'tasda ka rkasf kasflakflkasfhkjsahfiuawefkaenfakjfbhajbf', 6, 2, 1, 3);
+(1, 'Knightbot', '2d platformer game', 1, 2, 0, 0),
+(2, 'Music Player', 'Music palyer with interactive UI', 2, 1, 0, 0),
+(5, 'ML application', 'this is an ML program to amaze the data', 1, 2, 0, 0),
+(6, 'pop', 'dewfwefwe', 2, 0, 0, 0),
+(7, 'Car', '2d car game', 1, 2, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -69,16 +83,18 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `user_type`, `password`) VALUES
-(1, 'aniket', 'aniket@gmail.com', 'user', '185e1a3a41e1463e1a60901060bcfefc'),
-(2, 'abhishek', 'abhishek123@gmail.com', 'user', 'e5d1dfdc999e351aaf8861788e340f2c'),
-(3, 'bhagyesh123', 'bhagyesh123@gmail.com', 'user', 'eab8e9c44069f91b77e66e56612283fc'),
-(4, 'priyash123', 'priyash123@gmail.com', 'user', 'fe8bef9eea3c985210ff0a389d9823ce'),
-(5, 'shantanu123', 'shantanu123@gmail.com', 'user', 'b3347abacd45c286a4fdb6154e1dc069'),
-(6, 'saurbh123', 'saurbh123@gn.com', 'user', '3a19a14585ce3dc777f2f18397e9e9f9');
+(1, 'SAHIL123', 'sahil@gmail.com', 'user', '1006f0ae5a7ece19828a67ac62288e05'),
+(2, 'dhaval', 'dhaval@gmail.com', 'user', '975ef70ce2dd7ae8dd7de7c930d90d0d');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `comment`
+--
+ALTER TABLE `comment`
+  ADD PRIMARY KEY (`comment_id`);
 
 --
 -- Indexes for table `members_project`
@@ -97,16 +113,22 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `comment`
+--
+ALTER TABLE `comment`
+  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `members_project`
 --
 ALTER TABLE `members_project`
-  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
