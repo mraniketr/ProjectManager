@@ -12,7 +12,7 @@
 <html>
 <head>
 	<title>Registration system PHP and MySQL</title>
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles1new.css">
 
 </head>
 <body>
@@ -20,7 +20,7 @@
 	<h2>Register</h2>
 </div>
 <form method="post" action="register.php">
-	<div class="input-group">
+	<div class="input-group" style="margin-top:60px;">
 		<label>Username</label>
 		<input type="text" name="username" value="">
 	</div>

@@ -1,0 +1,263 @@
+* { margin: 0px; padding: 0px; }
+
+html, body{
+    height: 100vh;
+    margin: 0;
+}
+
+body {
+	height: 100vh;
+    margin:0;
+	background: url(computers.png);
+    background-size: cover;
+    
+}
+
+/*#bg{
+        clip-path:circle(80% at 21% 3%);
+    background: aliceblue;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1; 
+}*/
+.header {
+	
+    width: 100%;
+    margin-left: 335px;
+    margin-right: 335px;
+    
+    display: block;
+    padding-top: 10px;
+  
+    
+}
+
+.paddingh2{
+    padding: 45px;
+}
+
+.header h2{
+   font-size: 33pt;
+    background: #11083d;
+    padding: 12px;
+    margin-left:-37px;
+    width: 60%;
+    text-align: center;
+    clip-path: polygon(0 0,100% 0,86.5% 100%, 0% 100%);
+    color: aliceblue;
+}
+.content{
+   width: 700px;
+    height: 750px;
+    position: relative;
+    background: aliceblue;
+    text-align: center;
+    padding: 45px;
+    margin-top: 0px;
+    font-size: 25px;
+    border: 3px solid #fff;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;7
+    flex-direction: column;
+    flex: initial;
+}
+
+.content  p {
+    
+    font-family:monospace;
+    font-size: 30px;
+    padding: 28px;
+    padding-top: 0px;
+    margin-top:20px;
+    flex-direction: column;
+}
+
+
+
+.content label{
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    font-size: 25px
+}
+
+
+.content input {
+ 
+
+    border: none;
+    border-radius: 4px;
+    font-size: 10pt;
+    padding: 15px;
+    margin: 1px;
+    cursor: pointer;
+    box-shadow: 1px 2px 5px #1b1b1b;
+    width: 250px;
+}
+
+.upb{
+     background: #1b083d;
+  color: #e2e2e2;
+  border: none;
+  border-radius: 4px;
+  font-size: 12pt;
+  padding: 12px;
+  cursor: pointer;
+  box-shadow: 1px 2px 5px #1b1b1b;
+    word-wrap: normal;
+}
+    
+#pd1{
+    padding-top: 300px !important;
+}
+
+form, .content {
+    
+	padding: 25px;
+    display: flex;
+    flex-direction: column;
+    background: aliceblue;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    border: 3px solid 1;
+    margin-left: 300px;
+    margin-right: 300px;
+    
+}
+
+form{
+    margin-top: -60px;
+}
+.input-group {
+	margin: 10px 10px 10px 10px;
+}
+.input-group label {
+	display: block;
+	text-align: left;
+	margin: 4px;
+    font-family:monospace;
+    font-size: 23px;
+    padding: 10px;
+}
+.input-group input {
+	height: 30px;
+	width: 350px;
+	padding: 10px 10px;
+	font-size: 16px;
+	border-radius: 5px;
+	border: 1px solid gray;
+}
+#user_type {
+	height: 40px;
+	width: 98%;
+	padding: 5px 10px;
+	background: white;
+	font-size: 16px;
+	border-radius: 5px;
+	border: 1px solid gray;
+    
+}
+.btn {
+	  background: #1b083d;
+  color: #e2e2e2;
+  border: none;
+  border-radius: 4px;
+  font-size: 15pt;
+  padding: 20px;
+  cursor: pointer;
+  box-shadow: 1px 2px 5px #1b1b1b;
+width: 180px;
+}
+.error {
+	width: 92%; 
+	padding: 10px; 
+	border: 1px solid #a94442; 
+	color: #a94442; 
+	background: #f2dede; 
+	border-radius: 5px; 
+	text-align: left;
+}
+.success {
+    display: none;
+	color: #3c763d; 
+	background: #dff0d8; 
+	border: 1px solid #3c763d;
+	margin-bottom: 20px;
+}
+.profile_info img {
+	display: inline-block; 
+	width: 50px; 
+	height: 50px; 
+	margin: 5px;
+	float: left;
+}
+.profile_info div {
+	display: inline-block; 
+	margin: 15px;
+}
+.profile_info:after {
+	content: "";
+	display: block;
+	clear: both;
+    padding: 1px;
+}
+
+table {
+border-collapse:collapse;
+width: 850px;
+color: #588c7e;
+font-family: monospace;
+font-size: 28px;
+text-align: center;
+    margin-left: 50px;
+}
+th {
+background-color:  #1b083d;
+color: white;
+}
+tr:nth-child(even) {background-color: #f2f2f2}
+
+.content a{
+    text-decoration: none;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  font-size: 17pt;
+  padding: 12px;
+  cursor: pointer;
+  box-shadow: 1px 2px 5px #1b1b1b;
+  word-wrap: normal;
+    display: flex;
+    margin-top: -100px;
+    flex-direction:column;
+    margin: 10px;
+    
+}
+
+.red{
+    background: red;
+    
+}
+
+.green{
+    background: green;
+    
+}
+
+.red2{
+     background: red;
+    text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  font-size: 12pt;
+  padding: 12px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  cursor: pointer;
+  box-shadow: 1px 2px 5px #1b1b1b;
+  word-wrap: normal;
+    display: flex;
+    flex-direction: column;
+}

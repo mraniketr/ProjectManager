@@ -203,19 +203,26 @@ if (empty($pname)) {
 		array_push($errors, "Project name is required"); 
 	}
 	
-
+    $check_presence_userid = "SELECT id FROM users WHERE id = '$user_id1' or id = '$user_id1' or id = '$user_id1'";
+    $res = mysqli_query($db, $check_presence_userid);
+    $count = mysqli_num_rows($res);
 	// register user if there are no errors in the form
-	if (count($errors) == 0) {
+    if($count>0)
+        if (count($errors) == 0) {
 
-		$query = "INSERT INTO members_project (admin_id,pname,disc, user_id1, user_id2, user_id3) 
-					  VALUES('$admin_id','$pname','$disc', '$user_id1', '$user_id2', '$user_id3')";
-			mysqli_query($db, $query);
+            $query = "INSERT INTO members_project (admin_id,pname,disc, user_id1, user_id2, user_id3) 
+                          VALUES('$admin_id','$pname','$disc', '$user_id1', '$user_id2', '$user_id3')";
+                mysqli_query($db, $query);
+                header('location: index.php');				
 
-			header('location: index.php');				
-		
-	}
+        }
+    else{
+        $message = "UserId doesn't exits!!";
+        echo "$message"; 
+        print_r($message);
+        echo "<script type='text/javascript'>alert('$message');</script>"; 
+    }
 	
 }
 
-
-						
+?>						

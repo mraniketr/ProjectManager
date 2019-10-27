@@ -3,13 +3,13 @@
 <html>
 <head>
 	<title>Registration system PHP and MySQL</title>
-	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="stylesheet" type="text/css" href="styles1new.css">
 </head>
 <body>
 	<div class="header">
 		<h2>Login</h2>
 	</div>
-	<form method="post" action="login.php">
+	<form method="post" action="login.php" style="padding-top:60px !important" >
 
 		<?php echo display_error(); ?>
 

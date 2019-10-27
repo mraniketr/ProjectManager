@@ -19,7 +19,7 @@ $res = mysqli_query($con,$sql);
         $name = $row['name'];
         $path = $row['path'];
     
-        echo $id."".$name."<a href='download.php?dow=$path'>Download</a>";
+        echo $id."".$name."<a href='download.php?dow=$path'>Download</a> <a href='delete.php?del=$path'>Delete</a>";
         echo "<br>";
     }
     ?>

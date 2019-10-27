@@ -6,13 +6,13 @@ include('functions.php');
 <html>
 <head>
 	<title>Home</title>
-	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="stylesheet" type="text/css" href="styles2.css">
 </head>
 <body>
 	<div class="header">
 		<h2>USER DASHBORD</h2>
 	</div>
-	<div class="content">
+	<div class="content" id="pd1">
 		<!-- notification message -->
 		<?php if (isset($_SESSION['success'])) : ?>
 			<div class="error success" >
@@ -25,11 +25,13 @@ include('functions.php');
 			</div>
 		<?php endif ?>
 		<!-- logged in user information -->
-		<div class="profile_info">
+
+        <div class="profile_info">
 			
 
-			<div>
+			<div style="margin-top:-400px">
 				<?php  if (isset($_SESSION['user'])) : ?>
+                <h2 style="font-size:40px;">USER DETAILS</h2>
 					<strong><?php echo $_SESSION['user']['username']; ?></strong>
 
 					<small>
@@ -38,7 +40,8 @@ include('functions.php');
 						<h3>User Id - <?php echo ucfirst($_SESSION['user']['id']); ?></h3>
 						<?php $id=$_SESSION['user']['id'] ?>
 						<br>
-						<h2> Admin Projects</h2>
+						<h2 class="paddingh2" style="font-size:40px;"> Admin Projects</h2>
+                        <div style="height:80px; width:auto; overflow:auto; background-color:aliceblue; scrollbar-base-color:gold; padding:10px; ">
 						<?php 
 							error_reporting(0);
 
@@ -50,15 +53,17 @@ include('functions.php');
 								    {
 								    // printf ("%s\n",$row[0],$row[1]);
 								    echo "<a href='../login/project_dashboard.php?data=$row[1]'>$row[0]</a>";
-								    echo "<br>";
+								    //echo "<br>";
 								    
 								    }
 								  // Free result set
 								  mysqli_free_result($result);
 								}						
 						?>
+                        </div>    
 						<br>
-						<h2> Other Projects</h2>
+						<h2 class="paddingh2" style="font-size:40px;"> Other Projects</h2>
+                        <div style="height:150px; width:auto; overflow:auto; background-color:aliceblue; scrollbar-base-color:gold; padding:10px; ">
 							<?php 
 							error_reporting(0);
 
@@ -70,23 +75,22 @@ include('functions.php');
 								    {
 								    // printf ("%s\n",$row[0],$row[1]);
 								    echo "<a href='../login/project_dashboard.php?data=$row[1]'>$row[0]</a>";
-								    echo "<br>";
 								    }
 								  // Free result set
 								  mysqli_free_result($result);
 								}						
 						?>
-						
+                        </div>
 						<br>
-						<a href="project.php" style="color: green;">Create a project</a>
+						<a class="green" href="project.php" style="color: white;">CREATE NEW PROJECT</a>
 						<br>
 
-						<a href="index.php?logout='1'" style="color: red;">logout</a>
+						<a class="red" href="index.php?logout='1'" style="color: white;">LOGOUT</a>
 					</small>
 
 				<?php endif ?>
-			</div>
-		</div>
-	</div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
